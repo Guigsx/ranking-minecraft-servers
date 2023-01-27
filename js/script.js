@@ -6,41 +6,48 @@ const urls = [
     `${api}mush.com.br`,
     `${api}jogar.pixelmonbrasil.com.br`,
     `${api}redefantasy.com`,
-]
+    `${api}redevaison.tk`,
+    `${api}redeaqua.com`,
+    `${api}redevonix.com`,
+    `${api}redescrold.com`,
+];
+const ranking = document.querySelector('.ranking');
+
 async function getServerData(urls) {
     try {
         const responses = await Promise.all(urls.map(url => fetch(url)));
         const data = await Promise.all(responses.map(res => res.json()));
-        return data.map((item, i) => ({
-            id: i,
-            name: item.host,
-            players: item.players.online,
-            icon: item.icon,
-        }));
+        return data.map((item, i) => {
+            let players = item.players ? item.players.online : 0;
+            return {
+                id: i,
+                name: item.host,
+                players: players,
+                icon: item.icon,
+                online: item.online,
+            }
+        });
     } catch (error) {
         console.log(`Erro ao obter informações da API: ${error}`);
     }
 }
-getServerData(urls).then(serverData => {
-    serverData.sort((a, b) => b.players - a.players);
 
+
+
+function updateRanking(serverData) {
+    serverData.sort((a, b) => (b.players) - (a.players));
     let content = serverData.map((item, i) =>
-        `<p><img src="${item.icon}"> ${i + 1}. ${item.name} (${item.players.toLocaleString()} players) </p>`).join('');
+        `<p><img alt="Imagem do servidor" src="${item.icon}"> ${i + 1}. ${item.name} (${item.players.toLocaleString()} jogadores. online: ${item.online}) </p>`).join('');
+    ranking.innerHTML = content;
+}
 
-    document.querySelector('.ranking').innerHTML = content;
-});
+getServerData(urls).then(updateRanking);
 
 setInterval(() => {
-    getServerData(urls).then(serverData => {
-        serverData.sort((a, b) => b.players - a.players);
-
-        let content = serverData.map((item, i) =>
-            `<p><img src="${item.icon}"> ${i + 1}. ${item.name} (${item.players.toLocaleString()} players) </p>`).join('');
-        document.querySelector('.ranking').innerHTML = content;
-    });
+    getServerData(urls).then(updateRanking);
 }, 60000);
 
-let count = 60
+let count = 60;
 setInterval(() => {
     count--;
     document.querySelector('.time').innerHTML = count;
