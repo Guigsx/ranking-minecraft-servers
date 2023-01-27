@@ -10,6 +10,9 @@ const urls = [
     `${api}redeaqua.com`,
     `${api}redevonix.com`,
     `${api}redescrold.com`,
+    `${api}redehell.com`,
+    `${api}redegarnix.com`,
+    `${api}jogar.heavenlymc.com.br`,
 ];
 const ranking = document.querySelector('.ranking');
 
@@ -19,11 +22,12 @@ async function getServerData(urls) {
         const data = await Promise.all(responses.map(res => res.json()));
         return data.map((item, i) => {
             let players = item.players ? item.players.online : 0;
+            let icon = item.icon ? item.icon : './imgs/png.png';
             return {
                 id: i,
                 name: item.host,
                 players: players,
-                icon: item.icon,
+                icon: icon,
                 online: item.online,
             }
         });
@@ -31,8 +35,6 @@ async function getServerData(urls) {
         console.log(`Erro ao obter informações da API: ${error}`);
     }
 }
-
-
 
 function updateRanking(serverData) {
     serverData.sort((a, b) => (b.players) - (a.players));
