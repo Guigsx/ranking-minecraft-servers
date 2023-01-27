@@ -38,13 +38,13 @@ setInterval(() => {
             `<p><img src="${item.icon}"> ${i + 1}. ${item.name} (${item.players.toLocaleString()} players) </p>`).join('');
         document.querySelector('.ranking').innerHTML = content;
     });
-}, 10000);
+}, 60000);
 
-let count = 10
+let count = 60
 setInterval(() => {
     count--;
     document.querySelector('.time').innerHTML = count;
     if (count === 0) {
-        count = 10;
+        count = 60;
     }
 }, 1000);
