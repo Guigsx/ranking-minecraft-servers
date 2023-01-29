@@ -1,19 +1,23 @@
-let api = 'https://api.mcstatus.io/v2/status/java/';
-const urls = [
-    `${api}aspectmania.com.br`,
-    `${api}redestone.com`,
-    `${api}hylex.net`,
-    `${api}mush.com.br`,
-    `${api}jogar.pixelmonbrasil.com.br`,
-    `${api}redefantasy.com`,
-    `${api}redevaison.tk`,
-    `${api}redeaqua.com`,
-    `${api}redevonix.com`,
-    `${api}redescrold.com`,
-    `${api}redehell.com`,
-    `${api}redegarnix.com`,
-    `${api}jogar.heavenlymc.com.br`,
+const api = 'https://api.mcstatus.io/v2/status/java/';
+const dominios = [
+  'aspectmania.com.br',
+  'redestone.com',
+  'hylex.net',
+  'mush.com.br',
+  'jogar.pixelmonbrasil.com.br',
+  'redefantasy.com',
+  'redevaison.tk',
+  'redeaqua.com',
+  'redevonix.com',
+  'redescrold.com',
+  'redehell.com',
+  'redegarnix.com',
+  'jogar.heavenlymc.com.br',
+  'rede-feather.net',
+  'redescreen.com',
 ];
+const urls = dominios.map(dominio => `${api}${dominio}`);
+
 const ranking = document.querySelector('.ranking');
 
 async function getServerData(urls) {
@@ -40,7 +44,9 @@ async function getServerData(urls) {
 function updateRanking(serverData) {
     serverData.sort((a, b) => (b.players) - (a.players));
     let content = serverData.map((item, i) =>
-        `<p><img width="64" height="64" alt="Imagem do servidor" src="${item.icon}"> ${i + 1}. ${item.name} (${item.players.toLocaleString()} jogadores. online: <img width="16" height="16" src="${item.online}">) </p>`).join('');
+        `<p><n>${i + 1}</n> <img width="64" height="64" alt="Imagem do servidor" src="${item.icon}"> ${item.name}
+         (${item.players.toLocaleString()} jogadores. online: <img width="16" height="16" src="${item.online}">) </p>
+         `).join('');
     ranking.innerHTML = content;
 }
 

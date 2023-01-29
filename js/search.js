@@ -25,3 +25,8 @@ function procurar() {
         alert('Nada para procurar.')
     }
 }
+document.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      document.getElementById("procurar").click();
+    }
+})
