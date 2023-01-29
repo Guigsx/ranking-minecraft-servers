@@ -1,0 +1,10 @@
+body {
+    background-color: rgb(27, 27, 27);
+}
+.ranking {
+    width: 500px;
+    height: 100%;
+    background-color: white;
+    position: relative;
+    left: 30%;
+}

@@ -23,12 +23,13 @@ async function getServerData(urls) {
         return data.map((item, i) => {
             let players = item.players ? item.players.online : 0;
             let icon = item.icon ? item.icon : './imgs/png.png';
+            let online = item.online ? './imgs/online.png' : '/imgs/offiline.png';
             return {
                 id: i,
                 name: item.host,
                 players: players,
                 icon: icon,
-                online: item.online,
+                online: online,
             }
         });
     } catch (error) {
@@ -39,7 +40,7 @@ async function getServerData(urls) {
 function updateRanking(serverData) {
     serverData.sort((a, b) => (b.players) - (a.players));
     let content = serverData.map((item, i) =>
-        `<p><img alt="Imagem do servidor" src="${item.icon}"> ${i + 1}. ${item.name} (${item.players.toLocaleString()} jogadores. online: ${item.online}) </p>`).join('');
+        `<p><img width="64" height="64" alt="Imagem do servidor" src="${item.icon}"> ${i + 1}. ${item.name} (${item.players.toLocaleString()} jogadores. online: <img width="16" height="16" src="${item.online}">) </p>`).join('');
     ranking.innerHTML = content;
 }
 
