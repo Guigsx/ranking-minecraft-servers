@@ -15,6 +15,7 @@ const dominios = [
   'jogar.heavenlymc.com.br',
   'rede-feather.net',
   'redescreen.com',
+  'rededark.com',
 ];
 const urls = dominios.map(dominio => `${api}${dominio}`);
 
@@ -44,10 +45,11 @@ async function getServerData(urls) {
 function updateRanking(serverData) {
     serverData.sort((a, b) => (b.players) - (a.players));
     let content = serverData.map((item, i) =>
-        `<p><n>${i + 1}</n> <img width="64" height="64" alt="Imagem do servidor" src="${item.icon}"> ${item.name}
-         (${item.players.toLocaleString()} jogadores. online: <img width="16" height="16" src="${item.online}">) </p>
+        `<p><n>${i + 1}</n> <icons><img width="64" height="64" alt="Imagem do servidor" src="${item.icon}"></icons>
+         <nome>${item.name}</nome>
+         <on>${item.players.toLocaleString()} online <img width="16" height="16" src="${item.online}"></on></p>
          `).join('');
-    ranking.innerHTML = content;
+    ranking.innerHTML = "<h1>Ranking</h1>" + content;
 }
 
 getServerData(urls).then(updateRanking);
@@ -55,12 +57,3 @@ getServerData(urls).then(updateRanking);
 setInterval(() => {
     getServerData(urls).then(updateRanking);
 }, 60000);
-
-let count = 60;
-setInterval(() => {
-    count--;
-    document.querySelector('.time').innerHTML = count;
-    if (count === 0) {
-        count = 60;
-    }
-}, 1000);

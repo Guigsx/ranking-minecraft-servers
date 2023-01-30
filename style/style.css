@@ -1,27 +1,74 @@
 body {
     background-color: rgb(27, 27, 27);
-    font-family: Colfax;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .ranking {
     width: 500px;
-    height: 100%;
     background-color: rgb(31, 31, 31);
     position: relative;
     left: 30%;
     border-radius: 10px;
     padding: 10px;
+    box-shadow: 0px 0px 20px black;
 }
 
 .ranking p {
-    border: 2px solid black;
+    border-bottom: 2px solid black;
+    color: white;
+    margin: 1px;
+    transition: all 0.3s;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: rgb(20, 20, 20);
+}
+
+.ranking p:hover {
+    background-color: rgb(15, 15, 15);
 }
 
 .ranking n {
-    font-family: Colfax;
     font-size: 40px;
     letter-spacing: 0;
     font-style: normal;
+    margin: 5px;
+    margin-left: 15px;
+}
+
+.ranking on {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    top: -30px;
+    margin-right: 10px;
+}
+
+.ranking on img {
+    margin-left: 5px;
+}
+
+.ranking icons {
+    position: relative;
+    top: 12px;
+}
+
+.ranking nome {
+    margin-left: 30px;
+    position: relative;
+    top: -10px;
+    font-size: 100%;
+}
+
+.ranking-title {
+    font-size: 24px;
     font-weight: 700;
-    color: rgb(255,255,255);
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.ranking h1 {
+    text-align: center;
+    font-size: 20px;
+    color: white;
 }

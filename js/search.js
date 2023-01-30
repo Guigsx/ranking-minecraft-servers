@@ -1,3 +1,4 @@
+//desativado por enquanto.
 function validateInputs() {
     var inputs = document.querySelectorAll('.input-1');
     var inputsCompleted = true;
