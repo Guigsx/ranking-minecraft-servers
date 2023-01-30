@@ -12,22 +12,22 @@ function validateInputs() {
 
 function procurar() {
     if (validateInputs()) {
-    let input = document.querySelector('.input-1')
-    fetch(`https://api.mcstatus.io/v2/status/java/${input.value}`)
-    .then(res => res.json())
-    .then(data => {
-        let jogadores = data.players.online.toLocaleString()
-        document.querySelector('.resposta').innerHTML = jogadores
-    }).catch(e => {
-        document.querySelector('.resposta').innerHTML = "Não encontrado"
-    })
+        let input = document.querySelector('.input-1')
+        fetch(`https://api.mcstatus.io/v2/status/java/${input.value}`)
+            .then(res => res.json())
+            .then(data => {
+                let jogadores = data.players.online.toLocaleString()
+                document.querySelector('.resposta').innerHTML = jogadores
+            }).catch(e => {
+                document.querySelector('.resposta').innerHTML = "Não encontrado"
+            })
 
     } else {
         alert('Nada para procurar.')
     }
 }
-document.addEventListener("keypress", function(event) {
+document.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
-      document.getElementById("procurar").click();
+        document.getElementById("procurar").click();
     }
 })

@@ -1,22 +1,42 @@
 const api = 'https://api.mcstatus.io/v2/status/java/';
 const dominios = [
-  'aspectmania.com.br',
-  'redestone.com',
-  'hylex.net',
-  'mush.com.br',
-  'jogar.pixelmonbrasil.com.br',
-  'redefantasy.com',
-  'redevaison.tk',
-  'redeaqua.com',
-  'redevonix.com',
-  'redescrold.com',
-  'redehell.com',
-  'redegarnix.com',
-  'jogar.heavenlymc.com.br',
-  'rede-feather.net',
-  'redescreen.com',
-  'rededark.com',
+    'aspectmania.com.br',
+    'redestone.com',
+    'hylex.net',
+    'mush.com.br',
+    'jogar.pixelmonbrasil.com.br',
+    'redefantasy.com',
+    'redevaison.tk',
+    'redeaqua.com',
+    'redevonix.com',
+    'redescrold.com',
+    'redehell.com',
+    'redegarnix.com',
+    'jogar.heavenlymc.com.br',
+    'rede-feather.net',
+    'redescreen.com',
+    'rededark.com',
+    'jogar.rederevo.com',
+    'armamc.com',
+    'pokebrasil.net',
+    'redwins.com.br',
+    'jogar.mc-mastercraft.net',
+    'fallzpixelmon.com',
+    'stardix.com',
+    'jogar.rede-way.com',
+    'jogar.futurium.com.br',
+    'jogar.gg',
+    'pixelmonline.com',
+    'jogar.craftit.com.br',
+    'mc.sparklypower.net',
+    'gsgserver.com.br',
+    'jogar.absolutgg.com.br',
+    'jogar.austv.net',
+    'jogar.celestialpixelmon.com',
+    'jogar.redesgp.com',
+    'mc.instamc.com.br',
 ];
+
 const urls = dominios.map(dominio => `${api}${dominio}`);
 
 const ranking = document.querySelector('.ranking');
@@ -43,14 +63,19 @@ async function getServerData(urls) {
 }
 
 function updateRanking(serverData) {
+    let total = 0;
     serverData.sort((a, b) => (b.players) - (a.players));
-    let content = serverData.map((item, i) =>
-        `<p><n>${i + 1}</n> <icons><img width="64" height="64" alt="Imagem do servidor" src="${item.icon}"></icons>
-         <nome>${item.name}</nome>
-         <on>${item.players.toLocaleString()} online <img width="16" height="16" src="${item.online}"></on></p>
-         `).join('');
+    let content = serverData.map((item, i) => {
+        total += item.players;
+        return `<p><n>${i + 1}</n> <icons><img width="64" height="64" alt="Imagem do servidor" src="${item.icon}"></icons>
+           <nome>${item.name}</nome>
+           <on>${item.players.toLocaleString()} online <img width="16" height="16" src="${item.online}"></on></p>
+           `;
+    }).join('');
     ranking.innerHTML = "<h1>Ranking</h1>" + content;
+    console.log(`Total de jogadores online: ${total}`);
 }
+
 
 getServerData(urls).then(updateRanking);
 
