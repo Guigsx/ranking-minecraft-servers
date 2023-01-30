@@ -1,4 +1,3 @@
-const api = 'https://api.mcstatus.io/v2/status/java/';
 const dominios = [
     'aspectmania.com.br',
     'redestone.com',
@@ -35,7 +34,11 @@ const dominios = [
     'jogar.celestialpixelmon.com',
     'jogar.redesgp.com',
     'mc.instamc.com.br',
+    'elgae.net',
+    'chronos.craftlandia.com.br',
 ];
+
+const api = 'https://api.mcstatus.io/v2/status/java/';
 
 const urls = dominios.map(dominio => `${api}${dominio}`);
 
@@ -48,7 +51,7 @@ async function getServerData(urls) {
         return data.map((item, i) => {
             let players = item.players ? item.players.online : 0;
             let icon = item.icon ? item.icon : './imgs/png.png';
-            let online = item.online ? './imgs/online.png' : '/imgs/offiline.png';
+            let online = item.online ? '#00FF21' : '#FF0000';
             return {
                 id: i,
                 name: item.host,
@@ -69,7 +72,7 @@ function updateRanking(serverData) {
         total += item.players;
         return `<p><n>${i + 1}</n> <icons><img width="64" height="64" alt="Imagem do servidor" src="${item.icon}"></icons>
            <nome>${item.name}</nome>
-           <on>${item.players.toLocaleString()} online <img width="16" height="16" src="${item.online}"></on></p>
+           <on>${item.players.toLocaleString()} online <onoff style="background-color: ${item.online};"></onoff></on></p>
            `;
     }).join('');
     ranking.innerHTML = "<h1>Ranking</h1>" + content;

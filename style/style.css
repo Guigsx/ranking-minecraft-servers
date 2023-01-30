@@ -5,7 +5,6 @@ body {
 
 .ranking {
     width: 500px;
-    height: 100%;
     background-color: rgb(31, 31, 31);
     position: relative;
     left: 30%;
@@ -17,7 +16,7 @@ body {
 .ranking p {
     border-bottom: 2px solid black;
     color: white;
-    margin: 1px;
+    margin: 5px;
     transition: all 0.3s;
     font-weight: 700;
     border-radius: 10px;
@@ -44,13 +43,16 @@ body {
     margin-right: 10px;
 }
 
-.ranking on img {
-    margin-left: 5px;
-}
-
 .ranking icons {
     position: relative;
     top: 12px;
+}
+.ranking onoff {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: white;
+    margin-left: 5px;
 }
 
 .ranking nome {
