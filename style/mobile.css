@@ -1,0 +1,15 @@
+@media (max-width: 500px) {
+    .ranking {
+        width: 90%;
+        left: 10px;
+    }
+    .ranking on {
+        top: -10px;
+    }
+    .ranking nome {
+        margin-left: 10px;
+        position: relative;
+        top: -40px;
+        font-size: 90%;
+    }
+}
