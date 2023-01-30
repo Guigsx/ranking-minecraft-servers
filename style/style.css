@@ -5,6 +5,7 @@ body {
 
 .ranking {
     width: 500px;
+    height: 100%;
     background-color: rgb(31, 31, 31);
     position: relative;
     left: 30%;
