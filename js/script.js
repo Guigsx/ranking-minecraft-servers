@@ -43,6 +43,7 @@ const api = 'https://api.mcstatus.io/v2/status/java/';
 const urls = dominios.map(dominio => `${api}${dominio}`);
 
 const ranking = document.querySelector('.ranking');
+const resposta = document.querySelector('.resposta');
 
 async function getServerData(urls) {
     try {
