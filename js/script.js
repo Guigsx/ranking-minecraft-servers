@@ -75,8 +75,8 @@ function updateRanking(serverData) {
            <on>${item.players.toLocaleString()} online <onoff style="background-color: ${item.online};"></onoff></on></p>
            `;
     }).join('');
-    ranking.innerHTML = "<h1>Ranking</h1>" + content;
-    console.log(`Total de jogadores online: ${total}`);
+    ranking.innerHTML = `<h1>Ranking</h1><h2>Total de jogadores online: <tot>${total.toLocaleString()}</tot></h2>` + content;
+    console.log(`Total de jogadores online: ${total.toLocaleString()}`);
 }
 
 

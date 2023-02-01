@@ -1,4 +1,17 @@
 @media (max-width: 500px) {
+    header {
+        font-size: 25px;
+    }
+
+    .busca {
+        margin-left: -100px;
+        width: 400px;
+    }
+
+    .busca input {
+        width: 220px;
+    }
+
     .ranking {
         width: 90%;
         left: 10px;
@@ -12,5 +25,20 @@
         margin-left: 10px;
         top: -40px;
         font-size: 90%;
+    }
+
+    .resposta {
+        width: 350px;
+        margin-left: 1%;
+    }
+
+    .resposta p {
+
+    }
+
+    .resposta span {
+        width: 200px;
+        position: relative;
+        left: 40%;
     }
 }
