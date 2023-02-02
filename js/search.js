@@ -40,24 +40,3 @@ document.addEventListener("keypress", function (event) {
         document.getElementById("procurar").click();
     }
 })
-
-/* desativado para correções.
-document.querySelector(".ranking").addEventListener("click", function (event) {
-    if (event.target.tagName === "P", "nome", "n", "icons") {
-        document.querySelector('.ranking').classList.add('esconder')
-        resposta.classList.remove('esconder')
-        let info = document.querySelector('.ranking').querySelector('nome')
-        fetch(`https://api.mcstatus.io/v2/status/java/${info.innerHTML}`)
-            .then(res => res.json())
-            .then(data => {
-                let jogadores = `${data.players.online} / ${data.players.max}`
-                let icon = data.icon
-                let name = data.host
-                resposta.innerHTML = `
-        <p>Icon</p><span><img src="${icon}" style="width: 48px; heigth: 48px;"></span>
-        <p>Nome</p><span>${name}</span>
-        <p>Jogadores</p><span>${jogadores}</span>
-        `
-            })
-    }
-});*/

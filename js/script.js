@@ -36,6 +36,8 @@ const dominios = [
     'mc.instamc.com.br',
     'elgae.net',
     'chronos.craftlandia.com.br',
+    'potpvp.com.br',
+    'drazyh.com',
 ];
 
 const api = 'https://api.mcstatus.io/v2/status/java/';
