@@ -38,6 +38,7 @@ const dominios = [
     'chronos.craftlandia.com.br',
     'potpvp.com.br',
     'drazyh.com',
+    'redeforce.net',
 ];
 
 const api = 'https://api.mcstatus.io/v2/status/java/';
