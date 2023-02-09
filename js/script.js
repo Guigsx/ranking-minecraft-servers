@@ -39,6 +39,7 @@ const dominios = [
     'potpvp.com.br',
     'drazyh.com',
     'redeforce.net',
+    'flamemc.com.br',
 ];
 
 const api = 'https://api.mcstatus.io/v2/status/java/';
