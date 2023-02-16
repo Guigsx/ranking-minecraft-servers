@@ -8,8 +8,6 @@ const dominios = [
     'redevaison.tk',
     'redeaqua.com',
     'redevonix.com',
-    'redescrold.com',
-    'redehell.com',
     'redegarnix.com',
     'jogar.heavenlymc.com.br',
     'rede-feather.net',
