@@ -8,8 +8,6 @@ const dominios = [
     'redevaison.tk',
     'redeaqua.com',
     'redevonix.com',
-    'redescrold.com',
-    'redehell.com',
     'redegarnix.com',
     'jogar.heavenlymc.com.br',
     'rede-feather.net',
@@ -39,6 +37,9 @@ const dominios = [
     'potpvp.com.br',
     'drazyh.com',
     'redeforce.net',
+    'flamemc.com.br',
+    'bravemc.com.br',
+    'redesnow.com.br',
 ];
 
 const api = 'https://api.mcstatus.io/v2/status/java/';

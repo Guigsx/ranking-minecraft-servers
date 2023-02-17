@@ -19,13 +19,13 @@ function procurar() {
         fetch(`https://api.mcstatus.io/v2/status/java/${input.value}`)
             .then(res => res.json())
             .then(data => {
-                let jogadores = `${data.players.online} / ${data.players.max}`
+                let jogadores = `${data.players.online}`
                 let icon = data.icon
                 let name = data.host
                 resposta.innerHTML = `
-                <p>Icon</p><span><img src="${icon}" style="width: 48px; heigth: 48px;"></span>
-                <p>Nome</p><span>${name}</span>
-                <p>Jogadores</p><span>${jogadores}</span>
+                <img src="${icon}">
+                <name>${name}</name>
+                <players>${jogadores}</players>
                 `
             }).catch(e => {
                 resposta.innerHTML = "Não encontrado"
