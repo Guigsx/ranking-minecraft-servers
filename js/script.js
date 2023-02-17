@@ -38,7 +38,8 @@ const dominios = [
     'drazyh.com',
     'redeforce.net',
     'flamemc.com.br',
-    'bravemc.com.br'
+    'bravemc.com.br',
+    'redesnow.com.br',
 ];
 
 const api = 'https://api.mcstatus.io/v2/status/java/';
