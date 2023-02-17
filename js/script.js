@@ -41,6 +41,7 @@ const dominios = [
     'bravemc.com.br',
     'redesnow.com.br',
     'arcanth.net',
+    'veanty.com',
 ];
 
 const api = 'https://api.mcstatus.io/v2/status/java/';
