@@ -42,6 +42,7 @@ const dominios = [
     'redesnow.com.br',
     'arcanth.net',
     'veanty.com',
+    'jogarhappy.com',
 ];
 
 const api = 'https://api.mcstatus.io/v2/status/java/';
