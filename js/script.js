@@ -84,7 +84,6 @@ function updateRanking(serverData) {
     console.log(`Total de jogadores online: ${total.toLocaleString()}`);
 }
 
-
 getServerData(urls).then(updateRanking);
 
 setInterval(() => {

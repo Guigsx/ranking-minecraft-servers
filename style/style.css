@@ -149,25 +149,28 @@ header {
     padding: 10px;
     box-shadow: 0px 0px 20px black;
     color: white;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    font-size: 20px;
+    text-align: center;
 }
 
 .resposta img {
-    width: 80px;
-    height: 80px;
-margin-left: 10px;
+    width: 88px;
+    position: absolute;
+    left: 45%;
+    top: 30%;
 }
 
 .resposta name {
+    position: absolute;
+    top: 50%;
+    left: 43%;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .resposta players {
-    margin-left: 30px;
-}
-
-.resposta name::first-letter {
-    text-transform: uppercase;
+    position: absolute;
+    top: 60%;
+    left: 44.5%;
+    font-weight: 700;
 }

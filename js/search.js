@@ -19,7 +19,7 @@ function procurar() {
         fetch(`https://api.mcstatus.io/v2/status/java/${input.value}`)
             .then(res => res.json())
             .then(data => {
-                let jogadores = `${data.players.online}`
+                let jogadores = `${data.players.online} / ${data.players.max}`
                 let icon = data.icon
                 let name = data.host
                 resposta.innerHTML = `
