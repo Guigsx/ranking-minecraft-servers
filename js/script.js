@@ -40,6 +40,10 @@ const dominios = [
     'flamemc.com.br',
     'bravemc.com.br',
     'redesnow.com.br',
+    'arcanth.net',
+    'veanty.com',
+    'jogarhappy.com',
+    'SpectreMC.net'
 ];
 
 const api = 'https://api.mcstatus.io/v2/status/java/';
