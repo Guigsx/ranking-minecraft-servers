@@ -43,7 +43,7 @@ const dominios = [
     'arcanth.net',
     'veanty.com',
     'jogarhappy.com',
-    'SpectreMC.net'
+    'redestory.com',
 ];
 
 const api = 'https://api.mcstatus.io/v2/status/java/';
