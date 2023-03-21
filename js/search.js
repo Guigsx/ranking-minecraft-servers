@@ -1,5 +1,3 @@
-resposta.classList.add('esconder')
-
 function validateInputs() {
     var inputs = document.querySelectorAll('.input-1');
     var inputsCompleted = true;
@@ -14,7 +12,7 @@ function validateInputs() {
 function procurar() {
     if (validateInputs()) {
         ranking.classList.add('esconder')
-        resposta.classList.remove('esconder')
+        voltar.classList.remove('esconder')
         let input = document.querySelector('.input-1')
         fetch(`https://api.mcstatus.io/v2/status/java/${input.value}`)
             .then(res => res.json())
@@ -35,8 +33,16 @@ function procurar() {
         alert('Nada para procurar.')
     }
 }
+
+function back() {
+    voltar.classList.add('esconder')
+    ranking.classList.remove('esconder')
+}
+
 document.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         document.getElementById("procurar").click();
     }
 })
+
+voltar.classList.add('esconder')
