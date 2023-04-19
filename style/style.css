@@ -204,11 +204,97 @@ header {
     align-items: center;
     justify-content: center;
 }
+
 .resposta img {
     width: 80px;
     height: 80px;
 }
 
-.resposta img, .resposta name, .resposta players {
+.resposta img,
+.resposta name,
+.resposta players {
     margin: 10px;
+}
+
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+    .busca {
+        width: 90%;
+    }
+
+    .busca input,
+    .busca button {
+        width: 90%;
+    }
+
+    .ranking {
+        width: 90%;
+        max-width: none;
+    }
+
+    .ranking p {
+        width: 90%;
+    }
+
+    .ranking nome {
+        top: -40%;
+    }
+
+    .modal {
+        width: 90%;
+    }
+
+    .resposta {
+        width: 90%;
+    }
+}
+
+/* For screens between 600px and 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+    .busca {
+        width: 70%;
+    }
+
+    .busca input,
+    .busca button {
+        width: 70%;
+    }
+
+    .ranking {
+        width: 70%;
+        max-width: none;
+    }
+
+    .modal {
+        width: 70%;
+    }
+
+    .resposta {
+        width: 70%;
+    }
+}
+
+/* For screens larger than 900px */
+@media (min-width: 900px) {
+    .busca {
+        width: 550px;
+    }
+
+    .busca input,
+    .busca button {
+        width: 390px;
+    }
+
+    .ranking {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .modal {
+        width: 500px;
+    }
+
+    .resposta {
+        width: 95%;
+    }
 }
