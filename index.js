@@ -26,6 +26,7 @@ async function fetchAllServerData(servers) {
             });
         }
     }
+    serverData.sort((a, b) => b.players - a.players);
     return serverData;
 }
 
@@ -53,7 +54,9 @@ function showRanking(serverData) {
 async function updateRanking() {
     const servers = [
         "aspectmania.com.br",
-        "redestone.com"
+        "redestone.com",
+        "hylex.net",
+        "hypixel.net"
     ];
 
     const serverData = await fetchAllServerData(servers);
