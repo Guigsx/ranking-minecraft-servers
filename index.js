@@ -14,7 +14,7 @@ async function fetchAllServerData(servers) {
     const serverData = [];
     for (const server of servers) {
         const data = await fetchServerData(server);
-        let players = data.players ? data.players.online : 0
+        let players = data.players ? data.players.online : 0;
         let icon = data.icon ? data.icon : './imgs/png.png';
         let online = data.online ? '#00FF21' : '#FF0000';
         if (data) {
@@ -27,6 +27,7 @@ async function fetchAllServerData(servers) {
         }
     }
     serverData.sort((a, b) => b.players - a.players);
+    serverData.splice(10); // Manter apenas os 10 primeiros servidores
     return serverData;
 }
 
@@ -34,7 +35,7 @@ function showRanking(serverData) {
     const rankingDiv = document.querySelector('.ranking');
     rankingDiv.innerHTML = '';
 
-    for (let i = 0; i < serverData.length; i++) {
+    for (let i = 0; i < 10; i++) { // Iterar apenas pelos 10 primeiros servidores
         const server = serverData[i];
 
         const serverDiv = document.createElement('p');
@@ -56,10 +57,53 @@ async function updateRanking() {
         "aspectmania.com.br",
         "redestone.com",
         "hylex.net",
-        "hypixel.net"
+        "mush.com.br",
+        "jogar.pixelmonbrasil.com.br",
+        "redefantasy.com",
+        "redevaison.tk",
+        "redeaqua.com",
+        "redevonix.com",
+        "redegarnix.com",
+        "jogar.heavenlymc.com.br",
+        "rede-feather.net",
+        "redescreen.com",
+        "rededark.com",
+        "jogar.rederevo.com",
+        "armamc.com",
+        "pokebrasil.net",
+        "redwins.com.br",
+        "jogar.mc-mastercraft.net",
+        "fallzpixelmon.com",
+        "stardix.com",
+        "jogar.rede-way.com",
+        "jogar.futurium.com.br",
+        "jogar.gg",
+        "pixelmonline.com",
+        "jogar.craftit.com.br",
+        "mc.sparklypower.net",
+        "gsgserver.com.br",
+        "jogar.absolutgg.com.br",
+        "jogar.austv.net",
+        "jogar.celestialpixelmon.com",
+        "jogar.redesgp.com",
+        "mc.instamc.com.br",
+        "elgae.net",
+        "chronos.craftlandia.com.br",
+        "potpvp.com.br",
+        "drazyh.com",
+        "redeforce.net",
+        "flamemc.com.br",
+        "bravemc.com.br",
+        "redesnow.com.br",
+        "arcanth.net",
+        "veanty.com",
+        "jogarhappy.com",
+        "redestory.com",
+        "spectremc.com.br",
+        "redehawk.com"
     ];
-
     const serverData = await fetchAllServerData(servers);
     showRanking(serverData);
 }
+
 updateRanking();
