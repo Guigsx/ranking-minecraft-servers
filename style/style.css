@@ -1,0 +1,300 @@
+body {
+    background-color: rgb(27, 27, 27);
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.busca {
+    width: 550px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.busca input,
+.busca button {
+    width: 390px;
+    height: 40px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.busca button {
+    width: 390px;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px black;
+    font-size: 16px;
+    color: black;
+    transition: all 0.5s;
+    border-radius: 20px;
+}
+
+.busca button:hover {
+    opacity: 0.8;
+}
+
+.ranking {
+    width: 80%;
+    max-width: 500px;
+    min-height: 400px;
+    background-color: rgb(31, 31, 31);
+    box-shadow: 0px 0px 20px black;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ranking h1,
+.ranking h2 {
+    text-align: center;
+    color: white;
+}
+
+.ranking h1 {
+    font-size: 20px;
+}
+
+.ranking h2 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.ranking p {
+    width: 95%;
+    height: 90px;
+    border-bottom: 2px solid black;
+    color: white;
+    margin: 5px;
+    transition: all 0.3s;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: rgb(20, 20, 20);
+    cursor: pointer;
+}
+
+.ranking p:hover {
+    background-color: rgb(15, 15, 15);
+}
+
+.ranking n {
+    font-size: 40px;
+    letter-spacing: 0;
+    font-style: normal;
+    margin: 5px;
+    margin-left: 15px;
+}
+
+.ranking on {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -30px;
+    margin-right: 10px;
+}
+
+.ranking icons {
+    position: relative;
+    top: 12px;
+}
+
+.ranking onoff {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: white;
+    margin-left: 5px;
+}
+
+.ranking nome {
+    margin-left: 30px;
+    position: relative;
+    top: -10px;
+    font-size: 100%;
+}
+
+.loading {
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid #3498db;
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+}
+
+.fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 5;
+}
+
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 210px;
+    max-width: 90%;
+    background-color: rgb(22, 22, 22);
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+    z-index: 10;
+}
+
+.esconder {
+    display: none;
+}
+
+.resposta {
+    width: 95%;
+    height: 200px;
+    box-shadow: 0px 0px 10px black;
+    color: white;
+    margin: 5px;
+    transition: all 0.3s;
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.resposta img {
+    width: 80px;
+    height: 80px;
+}
+
+.resposta img,
+.resposta name,
+.resposta players {
+    margin: 10px;
+}
+
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+    .busca {
+        width: 90%;
+    }
+
+    .busca input,
+    .busca button {
+        width: 90%;
+    }
+
+    .ranking {
+        width: 90%;
+        max-width: none;
+    }
+
+    .ranking p {
+        width: 90%;
+    }
+
+    .ranking nome {
+        top: -40%;
+    }
+
+    .modal {
+        width: 90%;
+    }
+
+    .resposta {
+        width: 90%;
+    }
+}
+
+/* For screens between 600px and 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+    .busca {
+        width: 70%;
+    }
+
+    .busca input,
+    .busca button {
+        width: 70%;
+    }
+
+    .ranking {
+        width: 70%;
+        max-width: none;
+    }
+
+    .modal {
+        width: 70%;
+    }
+
+    .resposta {
+        width: 70%;
+    }
+}
+
+/* For screens larger than 900px */
+@media (min-width: 900px) {
+    .busca {
+        width: 550px;
+    }
+
+    .busca input,
+    .busca button {
+        width: 390px;
+    }
+
+    .ranking {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    .modal {
+        width: 500px;
+    }
+
+    .resposta {
+        width: 95%;
+    }
+}
